@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Linggong Kong | Political Science</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Academic website of Linggong Kong, Ph.D. candidate in Public Policy & Public Administration at Auburn University." />
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --bg-alt: #ffffff;
+      --text: #222222;
+      --muted: #555555;
+      --accent: #1b4b8f;
+      --accent-soft: rgba(27, 75, 143, 0.08);
+      --border: #dddddd;
+      --max-width: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(247, 247, 251, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    nav a:hover {
+      background: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      background: var(--bg-alt);
+      padding: 1.75rem 1.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    section.intro {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+      gap: 1.75rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      section.intro {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .tagline {
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .intro p {
+      margin-bottom: 0.75rem;
+      font-size: 0.98rem;
+    }
+
+    .contact {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .contact div {
+      margin-bottom: 0.25rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+    }
+
+    .chip {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      font-size: 0.8rem;
+      color: var(--accent);
+      border: 1px solid rgba(27, 75, 143, 0.2);
+    }
+
+    .panel {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 1rem 1rem;
+      border: 1px dashed #d4d4d8;
+      font-size: 0.9rem;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    h4 {
+      font-size: 0.98rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.2rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      margin-top: 0.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+      font-size: 0.94rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .cv-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-top: 0.75rem;
+    }
+
+    .cv-button span.icon {
+      font-size: 1.1rem;
+    }
+
+    .cv-button:hover {
+      text-decoration: none;
+      background: #16386a;
+    }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto 1.5rem;
+      padding: 0 1.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="nav-left">LINGGONG KONG</div>
+      <nav>
+        <ul>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#cv">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- INTRODUCTION -->
+    <section id="intro" class="intro">
+      <div>
+        <h1>Linggong Kong</h1>
+        <div class="subtitle">
+          Ph.D. Candidate in Public Policy &amp; Public Administration<br />
+          Department of Political Science, Auburn University
+        </div>
+        <div class="tagline">
+          International relations, U.S.&ndash;China relations, grand strategy, and political culture in comparative perspective.
+        </div>
+
+        <p>
+          I am a Ph.D. candidate in Public Policy &amp; Public Administration at Auburn University, with fields in international relations and comparative politics. My research examines how great-power rivalry, regional security dynamics, and domestic political culture interact to shape foreign policy choices and democratic governance.
+        </p>
+        <p>
+          Substantively, I focus on U.S.&ndash;China relations, China&rsquo;s grand strategy, and security politics in Northeast Asia. Methodologically, my work combines qualitative case studies, comparative analysis, and theory-driven empirical research to speak to both scholarly debates and policy audiences.
+        </p>
+        <p>
+          My recent and forthcoming work appears in <em>Politics &amp; Policy</em>, <em>European Foreign Affairs Review</em>, and <em>SN Social Sciences</em>, and I regularly contribute policy commentary to outlets such as The Conversation, Asia Times, and The Diplomat.
+        </p>
+
+        <div class="contact">
+          <div><strong>Email:</strong> <a href="mailto:Lzk0027@auburn.edu">Lzk0027@auburn.edu</a></div>
+          <div><strong>Address:</strong> 7080 Haley Center, Auburn University, Auburn, AL 36849, USA</div>
+          <!-- 如果你有 Google Scholar / ORCID, 可以在这里加链接 -->
+          <!-- <div><strong>Google Scholar:</strong> <a href="#" target="_blank" rel="noopener">Profile</a></div> -->
+        </div>
+
+        <div class="chips">
+          <span class="chip">International Relations</span>
+          <span class="chip">U.S.&ndash;China Relations</span>
+          <span class="chip">China&rsquo;s Grand Strategy</span>
+          <span class="chip">Northeast Asia Security</span>
+          <span class="chip">Comparative Politics</span>
+          <span class="chip">Political Culture</span>
+          <span class="chip">Democratic Governance</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <strong>Current Position</strong>
+          <p>
+            Ph.D. Candidate, Public Policy &amp; Public Administration<br />
+            Department of Political Science, Auburn University
+          </p>
+
+          <strong>Dissertation</strong>
+          <p>
+            <em>&ldquo;Protestantism vs. Confucianism: Cultural Impacts on Democratic Performance&rdquo;</em><br />
+            The dissertation investigates how distinct cultural traditions shape democratic performance across cases, with a particular focus on Protestant and Confucian societies.
+          </p>
+
+          <strong>Fields</strong>
+          <ul>
+            <li>International Relations</li>
+            <li>Comparative Politics</li>
+          </ul>
+
+          <strong>Languages &amp; Methods</strong>
+          <ul>
+            <li>Mandarin (native)</li>
+            <li>Quantitative and qualitative methods (SPSS, Stata, R, GIS)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
+      <h2>Research</h2>
+
+      <div class="two-column">
+        <div>
+          <h3>Research Interests</h3>
+          <p>
+            My research centers on the politics of great-power competition, with a particular focus on U.S.&ndash;China relations and the evolving security architecture of Northeast Asia. I am interested in how grand strategy, alliance politics, and domestic political constraints interact to shape state behavior in a changing international order.
+          </p>
+          <p>
+            In comparative politics, I study political culture and democratic governance, especially how historical legacies and cultural traditions influence regime performance, social mobilization, and public policy. My dissertation bridges these interests by examining the cultural underpinnings of democratic outcomes in Protestant and Confucian contexts.
+          </p>
+
+          <h3>Research Themes</h3>
+          <ul>
+            <li>U.S.&ndash;China strategic competition and foreign policy making</li>
+            <li>China&rsquo;s grand strategy and relations with major powers and regions</li>
+            <li>Security dynamics and escalation risks in Northeast Asia</li>
+            <li>Political culture, religion, and democratic performance</li>
+            <li>Elite leadership, civil&ndash;military relations, and institutional stability</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Current Projects</h3>
+
+          <h4>When to Test Missiles: North Korea&rsquo;s Ballistic Missile Launch Timing</h4>
+          <p>
+            This project analyzes how international political conditions, regional security dynamics, and domestic considerations shape North Korea&rsquo;s timing of ballistic missile tests. It seeks to clarify when and why missile launches are used as signaling tools in crisis and non-crisis periods. <em>(Under review)</em>
+          </p>
+
+          <h4>Trump&rsquo;s Second Term and the Liberal International Order</h4>
+          <p>
+            This work develops an integrative theoretical framework to assess how a second Trump administration would interact with, challenge, or reshape the liberal international order. It evaluates the order&rsquo;s resilience and potential pathways of transformation. <em>(Under review)</em>
+          </p>
+
+          <h4>Tenure of Military Chiefs of Staff Across the Globe</h4>
+          <p>
+            Co-authored with Peter B. White and Salah B. Hammou, this project investigates cross-national variation in the tenure of military chiefs of staff. It explores how regime type, institutional design, and civil&ndash;military relations affect leadership stability and turnover. <em>(In progress)</em>
+          </p>
+
+          <h4>Nonprofits and Voter Turnout Among Asian Americans</h4>
+          <p>
+            Joint work with Xiaoyu Qin examines how nonprofit organizations shape voter mobilization across generations of Asian Americans, with attention to community engagement, issue framing, and identity-based appeals. <em>(In progress)</em>
+          </p>
+
+          <h4>Assessing U.S.&ndash;China Strategic Competitiveness</h4>
+          <p>
+            This project systematically compares the strengths and weaknesses of the United States and China in their ongoing rivalry, spanning economic capabilities, technological innovation, military power, alliance networks, and ideational influence. <em>(In progress)</em>
+          </p>
+        </div>
+      </div>
+
+      <h3>Selected Conference Presentations</h3>
+      <ul>
+        <li>
+          &ldquo;Assessing Strategic Competitiveness: A Systematic Comparison of the Strengths and Weaknesses of the United States and China in Their Rivalry.&rdquo; International Studies Association (ISA) Annual Conference, Columbus, OH, March 2026 (scheduled).
+        </li>
+        <li>
+          &ldquo;A Study on the Impact of Nonprofit Organizations on Voter Turnout Across Generations of Asian Americans&rdquo; (with Xiaoyu Qin). Southern Political Science Association (SPSA), New Orleans, LA, January 2026 (scheduled).
+        </li>
+        <li>
+          &ldquo;The Self-Sabotaged Liberal Order: American Retrenchment and the Rise of Global Disorder &mdash; An Integrative Theoretical Analysis.&rdquo; ISSS-IS Annual Conference, Washington, DC, October 2025.
+        </li>
+        <li>
+          &ldquo;Examining the Logic behind the Timing Decision in North Korea&rsquo;s Missile Tests.&rdquo; Carolinas Conflict Consortium, Charleston, SC, April 2025; and APSA Annual Meeting, Philadelphia, PA, September 2024.
+        </li>
+        <li>
+          &ldquo;Divide, Win Over, Co-opt: A Brief Analysis of China&rsquo;s Current Europe Policy.&rdquo; Midwest Political Science Association (MPSA), Chicago, IL, April 2025; and ISSS-IS Annual Conference, Pittsburgh, PA, October 2024.
+        </li>
+        <li>
+          &ldquo;Protestantism vs. Confucianism: Cultural Impacts on Democratic Performance.&rdquo; Southern Political Science Association (SPSA), San Juan, Puerto Rico, January 2025.
+        </li>
+        <li>
+          &ldquo;How Long on the Job? Explaining Variation in the Tenure of Military Chiefs of Staff Across the Globe&rdquo; (with Peter B. White). Inter-University Seminar on Armed Forces and Society (IUS), Reston, VA, October 2023.
+        </li>
+      </ul>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <h3>Peer-Reviewed Journal Articles</h3>
+      <ul>
+        <li>
+          Kong, Linggong. 2025. &ldquo;Diminishing Partisanship: US Congress Rallies Around the Flag on China Policy.&rdquo; <em>Politics &amp; Policy</em> 53(5): e70082. <a href="https://doi.org/10.1111/polp.70082" target="_blank" rel="noopener">https://doi.org/10.1111/polp.70082</a>
+        </li>
+        <li>
+          Kong, Linggong. 2025. &ldquo;A Study on the Formulation of the Biden Administration&rsquo;s Semiconductor Policy Towards China Through the Lens of Multiple Streams Framework (MSF).&rdquo; <em>Politics &amp; Policy</em>. (Accepted &amp; forthcoming)
+        </li>
+        <li>
+          Kong, Linggong. 2025. &ldquo;Divide, Win Over, Co-opt: A Brief Analysis of China&rsquo;s Current Europe Policy.&rdquo; <em>European Foreign Affairs Review</em>. (Revise and resubmit)
+        </li>
+        <li>
+          Kong, Linggong. 2025. &ldquo;Collaborations in Social Movements: Case Studies from Poland, Czechoslovakia, and East Germany During the 1989 Revolutions.&rdquo; <em>SN Social Sciences</em>. (Revise and resubmit)
+        </li>
+      </ul>
+
+      <h3>Non-Peer-Reviewed Articles</h3>
+      <ul>
+        <li>
+          Kong, Linggong. 2025. &ldquo;Friends &lsquo;Un-United&rsquo;.&rdquo; <em>The Current Digest of the Russian Press</em> 77(13): 19&ndash;20. <a href="https://dx.doi.org/10.21557/DSP.104593942" target="_blank" rel="noopener">Link</a>
+        </li>
+      </ul>
+
+      <h3>Book Chapters</h3>
+      <ul>
+        <li>
+          Co-author (with Xiaoyu Qin and Xuan Wang), &ldquo;China&rdquo; section in <em>Encyclopedia on Local and Regional Governments: A Global Approach</em>, edited by J. Edwin Benton and John Kincaid. Edward Elgar, 2025 (under review).
+        </li>
+        <li>
+          Co-author (with Xi Chen), &ldquo;The Role of Policy Reforms and Growing Socioeconomic Divides in External Migration from China,&rdquo; in <em>Labor Migration and Poverty in a Turbulent Era: Perspectives from Developing Countries</em>, edited by Udaya Wagle (expected March 2027).
+        </li>
+      </ul>
+
+      <h3>Works in Progress &amp; Under Review</h3>
+      <ul>
+        <li>
+          &ldquo;When to Test Missiles: How International Relations Shape North Korea&rsquo;s Ballistic Missile Launch Timing.&rdquo; (Under review)
+        </li>
+        <li>
+          &ldquo;Trump&rsquo;s Second Term and the Liberal International Order: An Integrative Theoretical Analysis.&rdquo; (Under review)
+        </li>
+        <li>
+          &ldquo;How Long on the Job? Explaining Variation in the Tenure of Military Chiefs of Staff Across the Globe.&rdquo; (with Peter B. White and Salah B. Hammou) (In progress)
+        </li>
+        <li>
+          &ldquo;A Study on the Impact of Nonprofit Organizations on Voter Turnout Across Generations of Asian Americans.&rdquo; (with Xiaoyu Qin) (In progress)
+        </li>
+        <li>
+          &ldquo;Assessing Strategic Competitiveness: A Systematic Comparison of the Strengths and Weaknesses of the United States and China in Their Rivalry.&rdquo; (In progress)
+        </li>
+      </ul>
+
+      <h3>Public Commentary &amp; Policy Writing (Selected)</h3>
+      <ul>
+        <li>
+          &ldquo;How Elon Musk&rsquo;s Deep Ties to and Admiration for China Could Complicate Trump&rsquo;s Beijing Policy.&rdquo; <em>The Conversation</em>, February 24, 2025. Republished by <em>The Diplomat</em>, China Factor, <em>Atlantico</em>, and <em>Asia Times</em>.
+        </li>
+        <li>
+          &ldquo;Trump&rsquo;s Desire to &lsquo;Un-unite&rsquo; Russia and China Is Unlikely to Work &ndash; In Fact, It Could Well Backfire.&rdquo; <em>The Conversation</em>, March 25, 2025. Republished by <em>Asia Times</em>, <em>Atlantico</em>, DCReport, <em>Euromaidan Press</em>, and <em>Macau Daily Times</em>.
+        </li>
+        <li>
+          &ldquo;In Trade War with the US, China Holds a Lot More Cards than Trump May Think &ndash; In Fact, It Might Have a Winning Hand.&rdquo; <em>The Conversation</em>, April 11, 2025. Republished widely, including <em>Asia Times</em>, <em>Homeland Security News Wire</em>, <em>The Independent Uganda</em>, and others.
+        </li>
+        <li>
+          &ldquo;North Korean Spy Drama in China May Signal Beijing&rsquo;s Unease Over Growing Pyongyang&ndash;Moscow Ties.&rdquo; <em>The Conversation</em>, May 7, 2025. Republished by <em>The Diplomat</em>, China Factor, <em>Newsweek</em>, and <em>Asia Times</em>.
+        </li>
+        <li>
+          &ldquo;As Trade Talks Stall, Trump Tightens Pressure on China.&rdquo; <em>The Diplomat</em>, June 3, 2025.
+        </li>
+        <li>
+          &ldquo;Trump–Xi Call Boosts Chinese President&rsquo;s Tough Man Image &mdash; and May Have Handed Him the Upper Hand in Future Talks.&rdquo; <em>The Conversation</em>, June 10, 2025.
+        </li>
+        <li>
+          &ldquo;Beijing&rsquo;s &lsquo;Plausible Deniability&rsquo; on Arms Supply is Quickly Becoming Implausible &ndash; And Could Soon Extend to Iran.&rdquo; <em>The Conversation</em>, July 22, 2025.
+        </li>
+        <li>
+          &ldquo;Xi Running &lsquo;The Art of War&rsquo; Circles Around Trump.&rdquo; <em>Asia Times</em>, September 8, 2025.
+        </li>
+        <li>
+          &ldquo;Xi&rsquo;s Show of Unity with Putin and Kim Could Complicate China&rsquo;s Delicate Diplomatic Balance.&rdquo; <em>The Conversation</em>, September 15, 2025.
+        </li>
+        <li>
+          &ldquo;China&rsquo;s Moment: When Washington and Moscow Both Bow to Beijing.&rdquo; <em>Asia Times</em>, November 12, 2025.
+        </li>
+      </ul>
+
+      <h3>Media Interviews (Selected)</h3>
+      <ul>
+        <li>
+          &ldquo;Elon Musk Could Serve as a Bargaining Chip in U.S.-China Relations.&rdquo; gdh digital, March 1, 2025.
+        </li>
+        <li>
+          &ldquo;Going a Courting: China Woos Neighbors to Beat US Trade War.&rdquo; Global Post, April 16, 2025.
+        </li>
+        <li>
+          Interview on China&rsquo;s leverage in the U.S.&ndash;China trade war. SBS News Chinese Channel, April 21, 2025.
+        </li>
+        <li>
+          Interview on &ldquo;Attitude with Arnie Arnesen,&rdquo; WNHN Radio, April 22, 2025.
+        </li>
+        <li>
+          &ldquo;India and Israel Lose Their US-backed Dominance in Asia.&rdquo; The Cradle, August 4, 2025.
+        </li>
+      </ul>
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+      <h2>Curriculum Vitae</h2>
+      <p>
+        A full academic CV, including details on education, publications, conference presentations, teaching experience, awards, and professional service, is available in PDF format.
+      </p>
+      <p>
+        Please use the link below to download the most recent version.
+      </p>
+
+      <!-- 把下面的 href 换成你在 GitHub 仓库中实际的 CV 路径 -->
+      <a class="cv-button" href="files/Linggong_Kong_CV.pdf" target="_blank" rel="noopener">
+        <span class="icon">&#128462;</span>
+        <span>Download CV (PDF)</span>
+      </a>
+
+      <h3>Selected Highlights</h3>
+      <ul>
+        <li>Ph.D. Candidate in Public Policy &amp; Public Administration, Auburn University (expected 2026).</li>
+        <li>Fields in international relations and comparative politics, with regional expertise on China and Northeast Asia.</li>
+        <li>Peer-reviewed publications and multiple under-review and in-progress projects on U.S.&ndash;China relations, missile testing, grand strategy, and political culture.</li>
+        <li>Regular contributor to major policy and media outlets on U.S.&ndash;China relations and global security.</li>
+        <li>Teaching experience as a teaching assistant and guest lecturer in international relations, comparative politics, research methods, and international security.</li>
+        <li>Recipient of multiple travel grants and awards, including the 2025 Pi Sigma Alpha Epsilon Nu Chapter Most Outstanding Graduate Student Award at Auburn University.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Linggong Kong. All rights reserved.
+  </footer>
+
+  <script>
+    // 自动更新年份
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
